@@ -11,7 +11,7 @@ log_path = [
     "/home/xxx/example_path/log",
 ]
 root = 'log'
-scarla_name = [
+scalar_name = [
     "example_name",
 ]
 
@@ -20,7 +20,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--log_path', type=list, default=log_path)
     parser.add_argument('--root', type=str, default=root)
-    parser.add_argument('--scarla_name', type=list, default=scarla_name)
+    parser.add_argument('--scalar_name', type=list, default=scalar_name)
     args = parser.parse_args()
 
     for path in args.log_path:
@@ -37,7 +37,7 @@ if __name__ == '__main__':
         else:
             log_name = '_'.join(tokens[:-1])
         
-        for sn in args.scarla_name:
+        for sn in args.scalar_name:
             try:
                 rows= list(map(lambda se: (se.wall_time, se.step, se.value), event_acc.Scalars(sn)))
                 file_name = os.path.join(os.path.dirname(path), f"run-{log_name}-tag-{sn.replace('/', '_')}.csv")
