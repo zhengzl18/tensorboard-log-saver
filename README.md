@@ -6,7 +6,7 @@ A script for automatically downloading the csv files from tensorboard log files
 
 ## Usage
 1. `log_path`: a list of strings, each of which specifies a directory, containing the tensorboard log files you want to download data from. All the log files in the directories will be loaded. It's able to use either absolute paths or relative paths.
-2. `root`: a string specifying the root directory of all log files. Only the names of the subdirectories will appear in the names of the csv files. Make sure that `root` is a part of every element in your `log_path`.
+2. `root`: a string specifying the root directory of all log files. Only the components of the subdirectories will appear in the names of the csv files. Make sure that `root` is a component of every element in your `log_path`.
 3. `scalar_name`: a list of strings containing the scalar tags of which the data you want to download.
 
 Note that the final csv files are named by the same rule with that of tensorboard.
